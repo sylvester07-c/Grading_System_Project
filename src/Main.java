@@ -25,27 +25,23 @@ public class Main {
 //        gradeManager.addStudent(1, "Favour");
 //        gradeManager.addStudent(2, "Praise");
 //        gradeManager.addStudent(3, "Funsho");
-
+//
         gradeManager.addStudent(student0);
         gradeManager.addStudent(student01);
         gradeManager.addStudent(student02);
+//
+//
+//
+//
+//        System.out.println(gradeManager.getStudents().toString());
+//
+//        gradeManager.removeStudent(student02);
+//        System.out.println(gradeManager.getStudents().toString());
+//        gradeManager.findByName("GRace");
+        gradeManager.findById(7);
 
 
 
-
-        System.out.println(gradeManager.getStudents().toString());
-
-        gradeManager.removeStudent(student02);
-//         students = gradeManager.getStudents();
-
-        System.out.println(gradeManager.getStudents().toString());
-
-//        System.out.println(gradeManager.toString());
-//        System.out.println(gradeManager.toString());
-
-        for(Student studentn: students){
-            System.out.println(studentn);
-        }
 
     }
 }
