@@ -3,19 +3,19 @@ import java.util.Scanner;
 
 public class Student {
 
-    private String studentID;
-    private String name;
-    protected double[] grade;
-    private int gradeCount;
+    protected int  studentID;
+    protected String name;
+    protected double[] grades;
+    protected int gradeCount;
 
-    public Student(String studentID, String name, double[] grade, int gradeCount) {
+    public Student(int studentID, String name) {
         this.studentID = studentID;
         this.name = name;
-        this.grade = new double[10];
+        this.grades = new double[10];
         this.gradeCount = gradeCount;
     }
 
-    public String getStudentID() {
+    public int getStudentID() {
         return studentID;
     }
 
@@ -23,8 +23,14 @@ public class Student {
         return name;
     }
 
-    public double[] getGrade() {
-        return grade;
+    public void addGrade(double grade) {
+        if(gradeCount < grades.length){
+            grades[gradeCount] = grade;
+            gradeCount++;
+        }else {
+            System.out.println("Grade list is full!");
+        }
+
     }
 
     public int getGradeCount() {
@@ -38,32 +44,43 @@ public class Student {
     public double getAverage() {
         double sum = 0;
         double average = 0;
-        for (double gra : grade) {
-            sum += gra;
-            average = sum / grade.length - 1;
+        if(gradeCount == 0) {
+            System.out.println("No grade has been entered!");
+        }else {
+            for (double grade : grades) {
+                sum += grade;
+                average = sum / gradeCount;
+            }
+
+            System.out.println("Grade average is :" + average);
         }
         return average;
     }
 
     public  double getHighest(){
-        double highest = grade[0];
-        for(int i = 0; i < grade.length; i++ ){
-            if(grade[i] > highest){
-                highest = grade[i];
+        double highest = grades[0];
+        for(int i = 0; i < gradeCount; i++ ){
+            if(grades[i] > highest){
+                highest = grades[i];
             }
-            System.out.println("Your highest grade is: " + highest);
         }
+        System.out.println("Your highest grades is: " + highest);
         return  highest;
     }
 
     public double getLowest() {
-        double lowest = grade[0];
-        for(int i = 0; i < grade.length; i++) {
-            if(grade[i] < lowest) {
-                lowest = grade[i];
-            }
-            System.out.println("Your lowest grade is: " + lowest);
+        if(gradeCount == 0){
+            System.out.println("No grades added yet.");
+            return  0;
         }
+
+        double lowest = grades[0];
+        for(int i = 0; i < gradeCount; i++) {
+            if(grades[i] < lowest) {
+                lowest = grades[i];
+            }
+        }
+        System.out.println("Your lowest grades is: " + lowest);
         return  lowest;
     }
 
@@ -72,7 +89,7 @@ public class Student {
         return "Student{" +
                 "studentID='" + studentID + '\'' +
                 ", name='" + name + '\'' +
-                ", grade=" + Arrays.toString(grade) +
+                ", grades=" + Arrays.toString(grades) +
                 ", gradeCount=" + gradeCount +
                 '}';
     }
