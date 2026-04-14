@@ -73,6 +73,7 @@ public class GradeManager{
     }
 
     public void printLeaderBoard(){
+        System.out.println("LeaderBoard!");
         for(Student student : students){
             double[] gradeAverage = new double[]{student.getAverage()};
             Arrays.sort(gradeAverage);
