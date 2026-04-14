@@ -31,27 +31,30 @@ public class Main {
         student0.addGrade(45.8);
 
         Student student01 = new Student(8, "Peace");
-        student01.addGrade(65.8);
-        student01.addGrade(65.8);
-        student01.addGrade(65.8);
-        student01.addGrade(65.8);
-        student01.addGrade(15.8);
-        student01.addGrade(25.8);
-        student01.addGrade(85.8);
-        student01.addGrade(65.8);
-        student01.addGrade(45.8);
-        student01.addGrade(95.8);
+
+        double[] myGrade01 = {65.8,
+                65.8,
+                65.8,
+                65.8,
+                15.8,
+                25.8,
+                85.8,
+                65.8,
+                45.8,
+                95.8};
+        student01.addGrade(myGrade01);
+
+
+
+
+
+
+
+
         Student student02 = new Student(7, "Fathia");
-        student02.addGrade(15.6);
-        student02.addGrade(25.5);
-        student02.addGrade(65.4);
-        student02.addGrade(35.8);
-        student02.addGrade(45.2);
-        student02.addGrade(95.5);
-        student02.addGrade(25.3);
-        student02.addGrade(54.4);
-        student02.addGrade(56.5);
-        student02.addGrade(95.0);
+        double[] myGrade02 = {15.6,25.5,65.4,35.8,45.2,95.5,25.3,54.5,67.8,90.5};
+        student02.addGrade(myGrade02);
+
 //        gradeManager.addStudent(1, "Favour");
 //        gradeManager.addStudent(2, "Praise");
 //        gradeManager.addStudent(3, "Funsho");

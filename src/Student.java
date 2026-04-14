@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -25,8 +26,9 @@ public class Student {
 
     public void addGrade(double grade) {
         if(gradeCount < grades.length){
-            grades[gradeCount] = grade;
-            gradeCount++;
+                grades[gradeCount] = grade;
+                gradeCount++;
+
         }else {
             System.out.println("Grade list is full!");
         }
@@ -37,8 +39,17 @@ public class Student {
         return gradeCount;
     }
 
-    public static double[] addGrade(double[] grade) {
-        return grade;
+    public void addGrade(double[] newgrade) {
+        for(int i = 0; i < newgrade.length; i++){
+            if(gradeCount < grades.length){
+                grades[gradeCount] = newgrade[i];
+                gradeCount++;
+            }else{
+                System.out.println("List full!");
+                break;
+            }
+        }
+
     }
 
     public double getAverage() {
@@ -52,9 +63,9 @@ public class Student {
                 average = sum / gradeCount;
             }
 
-            System.out.println("Grade average is :" + average);
+//            System.out.println("Grade average is :" + average);
         }
-        return average;
+        return Math.round(average * 100.0) / 100.0;
     }
 
     public  double getHighest(){
