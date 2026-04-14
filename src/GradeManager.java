@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GradeManager{
 
@@ -69,6 +70,18 @@ public class GradeManager{
         }
         System.out.println("Student not in the list");
         return  null;
+    }
+
+    public void printLeaderBoard(){
+        for(Student student : students){
+            double[] gradeAverage = new double[]{student.getAverage()};
+            Arrays.sort(gradeAverage);
+
+            for(int i = 0; i < gradeAverage.length; i++){
+                System.out.println(student.getName() + " with an average of " + gradeAverage[i]);
+            }
+        }
+
     }
 
     @Override

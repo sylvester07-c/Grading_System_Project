@@ -19,9 +19,39 @@ public class Main {
         GradeManager gradeManager = new GradeManager(students);
 
         Student student0 = new Student(6, "Grace");
-        Student student01 = new Student(8, "Peace");
-        Student student02 = new Student(7, "Fathia");
+        student0.addGrade(85.8);
+        student0.addGrade(75.8);
+        student0.addGrade(65.8);
+        student0.addGrade(75.8);
+        student0.addGrade(95.8);
+        student0.addGrade(35.8);
+        student0.addGrade(65.8);
+        student0.addGrade(55.8);
+        student0.addGrade(75.8);
+        student0.addGrade(45.8);
 
+        Student student01 = new Student(8, "Peace");
+        student01.addGrade(65.8);
+        student01.addGrade(65.8);
+        student01.addGrade(65.8);
+        student01.addGrade(65.8);
+        student01.addGrade(15.8);
+        student01.addGrade(25.8);
+        student01.addGrade(85.8);
+        student01.addGrade(65.8);
+        student01.addGrade(45.8);
+        student01.addGrade(95.8);
+        Student student02 = new Student(7, "Fathia");
+        student02.addGrade(15.6);
+        student02.addGrade(25.5);
+        student02.addGrade(65.4);
+        student02.addGrade(35.8);
+        student02.addGrade(45.2);
+        student02.addGrade(95.5);
+        student02.addGrade(25.3);
+        student02.addGrade(54.4);
+        student02.addGrade(56.5);
+        student02.addGrade(95.0);
 //        gradeManager.addStudent(1, "Favour");
 //        gradeManager.addStudent(2, "Praise");
 //        gradeManager.addStudent(3, "Funsho");
@@ -39,6 +69,9 @@ public class Main {
 //        System.out.println(gradeManager.getStudents().toString());
 //        gradeManager.findByName("GRace");
         gradeManager.findById(7);
+        gradeManager.printLeaderBoard();
+
+
 
 
 
